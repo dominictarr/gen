@@ -1,0 +1,10 @@
+{ "name": "proj"
+, "version": "0.0.0"
+, "description": "Test Project for GEN"
+, "homepage": "http://github.com/user/proj"
+, "repository": 
+  { "type": "git"
+  , "url": "https://github.com/user/proj.git" }
+, "dependencies": {}
+, "devDependencies": {}
+, "author": "name <email> (website)" }

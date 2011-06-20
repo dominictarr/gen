@@ -1,0 +1,11 @@
+{ "files": 
+  { "package.json": 
+    { "dependencies": {}
+    , "devDependencies": {}
+    , "author": "name <email> (website)" }
+  , "readme.markdown": ""
+  , ".gitignore": "node_modules\nnode_modules/*\nnpm_debug.log\n"
+  , "test": true }
+, "auth": 
+  { "username": "user"
+  , "password": "password" } }
