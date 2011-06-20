@@ -157,7 +157,7 @@ function init(p,name,description,config,cb){
     } else {
       writeFile(_path,obj,next)
       console.log(style.bold(_path.replace(process.cwd(),'')),':')
-      console.log(indent(style.green(render.cf(obj))))
+      console.log(indent(style.green(render.json.cf(obj))))
     }
   }
 
