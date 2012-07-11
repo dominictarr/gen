@@ -1,31 +1,14 @@
 {
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://bit.ly/dominictarr)",
   "name": "gen",
-  "description": "Generate Empty Node project",
+  "description": "Generate github page",
   "version": "0.0.0",
   "homepage": "https://github.com/dominictarr/gen",
   "repository": {
     "type": "git",
     "url": "git://github.com/dominictarr/gen.git"
   },
-  "main": "./gen.js",
-  "scripts": {
-    "test": "meta-test test/*.js"
-  },
   "bin": {
-    "gen": "./gen.js"
+    "gen": "./gen.sh"
   },
-  "engines": {
-    "node": "*"
-  },
-  "dependencies": {
-    "mkdirp": "~0.0.3"
-  , "render": "~0.0.5"
-  , "request": "~1.9.5"
-  , "style": "~0.1.1"
-  },
-  "devDependencies": {
-    "nodemock": "0.2.9beta"
-  , "it-is": "0.0.x"
-  }
 }
