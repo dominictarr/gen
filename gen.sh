@@ -36,9 +36,9 @@ delete () {
 
 add () {
   if [ "$arg" = -f ]; then
-    git remote rm origin >2 
+    git remote rm origin >&2 
   fi
-  git remote add origin "git@github.com:$username/$name.git" >2
+  git remote add origin "git@github.com:$username/$name.git" >&2
 }
 
 "$@"
