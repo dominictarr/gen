@@ -2,7 +2,7 @@
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://bit.ly/dominictarr)",
   "name": "gen",
   "description": "Generate github page",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/dominictarr/gen",
   "repository": {
     "type": "git",
