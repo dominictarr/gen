@@ -1,5 +1,5 @@
 {
-  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://bit.ly/dominictarr)",
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "name": "gen",
   "description": "Generate github page",
   "version": "1.0.1",
@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git://github.com/dominictarr/gen.git"
   },
+  "dependencies": {
+    "event-stream": "~2.1",
+    "optimist": "0.2.8"
+  }, 
   "bin": {
     "gen": "./gen.sh"
   }
