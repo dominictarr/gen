@@ -13,12 +13,17 @@ if [ "x$name" = x ]; then
   arg=$2
 fi
 
+__filename=$BASH_SOURCE
+echo `dirname $__filename`
+replace=`dirname $__filename`/cli.js
+echo $replace
+
 create () {
   curl -X POST -u "$username:$auth" "https://api.github.com/user/repos" -d "{\"name\":\"$name\"}"
 }
 
-ls () {
-  gh GET /user/repos
+list () {
+  curl -u "$username:$auth" "https://api.github.com/user/repos"
 }
 
 delete () {
@@ -41,5 +46,14 @@ add () {
   git remote add origin "git@github.com:$username/$name.git" >&2
 }
 
+init () {
+  echo init
+  for file in `ls ~/.gen/default/* -1`; do
+    copyTo=`basename $file`
+    test -f "$copyTo" ||
+      node $replace --name "$name" --year "`date +%Y`" < $file > $copyTo
+  done
+
+}
 "$@"
 
