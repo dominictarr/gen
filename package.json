@@ -13,6 +13,7 @@
     "optimist": "0.2.8"
   }, 
   "bin": {
-    "gen": "./gen.sh"
+    "gen": "./gen.sh",
+    "gen-template": "./cli.js"
   }
 }

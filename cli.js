@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 var replace = require('./replace')
 var opts = require('optimist').argv
