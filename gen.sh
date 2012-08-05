@@ -42,7 +42,7 @@ add () {
 }
 
 init () {
-  for file in `ls ~/.gen/default/* -1`; do
+  for file in `ls ~/.gen/default/* -1A`; do
     copyTo=`basename $file`
     test -f "$copyTo" ||
       gen-template --name "$name" --year "`date +%Y`" < $file > $copyTo
