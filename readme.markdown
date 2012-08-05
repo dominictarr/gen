@@ -6,10 +6,19 @@ gen delete PROJECT #delete page for PROJECT
 gen ls             #list projects
 ```
 
-##setup
+## Setup
 
 ```
-mkdir -p ~/.gen/config
-echo 'username=USERNAME;auth=PASSWORD' > ~/.gen/config
+cp ./template.gen ~/.gen -R
 ```
+edit `~/.gen/config`,
+
 substitute CAPITALS.
+
+
+## Templates
+
+edit `~/.gen/default/*'  
+
+`{{KEY}}` will be replaced with KEY from the config file
+
