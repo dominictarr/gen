@@ -4,12 +4,15 @@
 
 name=$2
 arg=$3
+
+dir=`readlink . -e`
+dirname=`basename $dir`
+
 if [ "$name" = -f ]; then
   name=''
 fi
 if [ "x$name" = x ]; then
-  dir=`readlink . -e`
-  name=`basename $dir`
+  name=$dirname
   arg=$2
 fi
 
@@ -34,11 +37,18 @@ delete () {
   curl -X DELETE -u "$username:$auth" "https://api.github.com/repos/$username/$name"
 }
 
+#gen add USER
+#adds 
 add () {
-  if [ "$arg" = -f ]; then
-    git remote rm origin >&2 
+  remote=origin
+
+  if [ "$dirname" != "$name" ]; then
+    [ "$arg" = -f ] && git remote rm $name >&2 
+    git remote add "$name" "git:github.com/$name/$dirname.git" >&2
+  else
+    [ "$arg" = -f ] && git remote rm origin >&2 
+    git remote add origin "git@github.com:$username/$name.git" >&2
   fi
-  git remote add origin "git@github.com:$username/$name.git" >&2
 }
 
 init () {
