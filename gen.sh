@@ -44,7 +44,7 @@ add () {
 
   if [ "$dirname" != "$name" ]; then
     [ "$arg" = -f ] && git remote rm $name >&2 
-    git remote add "$name" "git:github.com/$name/$dirname.git" >&2
+    git remote add "$name" "git://github.com/$name/$dirname.git" >&2
   else
     [ "$arg" = -f ] && git remote rm origin >&2 
     git remote add origin "git@github.com:$username/$name.git" >&2
