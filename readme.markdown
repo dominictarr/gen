@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/dominictarr/gen.png)](http://travis-ci.org/dominictarr/gen)
 #gen - Generate github page
 
 ```
