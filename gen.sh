@@ -11,6 +11,7 @@ dirname=`basename $dir`
 if [ "$name" = -f ]; then
   name=''
 fi
+
 if [ "x$name" = x ]; then
   name=$dirname
   arg=$2
@@ -52,10 +53,15 @@ add () {
 }
 
 init () {
-  for file in `ls ~/.gen/default/ -1A`; do
+  type="$1"
+  [ "x$type" = x ] && type=default
+  for file in `ls ~/.gen/$type/ -1A`; do
     copyTo=`basename $file`
-    test -f "$copyTo" ||
-      gen-template --name "$name" < ~/.gen/default/$file > $copyTo
+
+    test -d  ~/.gen/$type/$file && mkdir $copyTo 2> /dev/null
+    test -e "$copyTo" || {
+      gen-template --name "$name" < ~/.gen/$type/$file > "$copyTo"
+    }
   done
 }
 
