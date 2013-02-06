@@ -9,8 +9,7 @@
     "url": "git://github.com/dominictarr/gen.git"
   },
   "dependencies": {
-    "event-stream": "~2.1",
-    "rc": "0.0.2"
+    "carpenter": "0.0"
   },
   "bin": {
     "gen": "./gen.sh",
