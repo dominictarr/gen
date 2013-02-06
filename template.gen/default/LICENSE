@@ -1,4 +1,4 @@
-Copyright (c) {{year}} {{author}}
+Copyright (c) {{{=new Date().getUTCFullYear()}}} {{{-author}}}
 
 Permission is hereby granted, free of charge, 
 to any person obtaining a copy of this software and 
