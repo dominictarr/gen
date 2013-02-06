@@ -5,7 +5,7 @@
 name=$2
 arg=$3
 
-dir=`readlink . -e`
+dir=$PWD
 dirname=`basename $dir`
 
 if [ "$name" = -f ]; then
@@ -55,14 +55,10 @@ add () {
 init () {
   type="$1"
   [ "x$type" = x ] && type=default
-  for file in `ls ~/.gen/$type/ -1A`; do
-    copyTo=`basename $file`
+  
+  carpenter ~/.gen/$type/ . \
+     --appname gen -R --name "$name" --description "$description"
 
-    test -d  ~/.gen/$type/$file && mkdir $copyTo 2> /dev/null
-    test -e "$copyTo" || {
-      gen-template --name "$name" < ~/.gen/$type/$file > "$copyTo"
-    }
-  done
 }
 
 clone () {
