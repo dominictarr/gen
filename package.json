@@ -11,8 +11,5 @@
   "dependencies": {
     "carpenter": "0.0"
   },
-  "bin": {
-    "gen": "./gen.sh",
-    "gen-template": "./cli.js"
-  }
+  "bin": "./gen.sh"
 }
