@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-. ~/.gen/config
-
 name=$2
 arg=$3
 
@@ -65,6 +63,19 @@ clone () {
   repo="$1"
   git clone "git@github.com:$username/$repo.git"
 }
+
+init_gen () {
+  dir=$(dirname $(readlink -e $(which gen)))
+  cp -R "$dir"/template.gen ~/.gen
+  echo please edit ~/.gen/config
+  exit
+}
+
+if [ -e ~/.gen/config ]; then
+  . ~/.gen/config
+else
+  init_gen
+fi
 
 "$@"
 
